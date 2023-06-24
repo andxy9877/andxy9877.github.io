@@ -1,0 +1,763 @@
+
+body {
+    background-color: #000000;
+    font-family: roboto;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    padding: 15px;
+    text-align: center;
+    background-image: url('images/bannerhead.jpg'); 
+    height:1vh;
+  }
+  /*-----------------------------------------------------*/
+
+  
+
+
+/*--------------------BARRA DE NAVEGACION------------------------*/
+  
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 99%;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  z-index: 999;
+}
+
+
+body {
+  margin-top: 70px; 
+}
+
+
+
+nav .logo {
+  color: #ff3300;
+  font-size: 30px;
+  float: left;
+  margin-top: 5px;
+  margin-right: 1px;
+  font-family: anime;
+  border: #fff;
+  position: relative;
+}
+
+nav .logo:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  bottom: -5px;
+  left: 0;
+  opacity: 0;
+  transform: scaleX(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+nav .logo:hover:before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+  
+nav a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 25px;
+  border-color: #000000;
+  position: relative;
+  transition: color 0.3s ease;
+}
+  nav a:before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transform: scaleX(0);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  nav a:hover,
+nav a:focus {
+  color: #ff0000;
+}
+
+nav a:hover:before,
+nav a:focus:before {
+  background-color: #ff0000;
+  transform: scaleX(1);
+}
+  nav .user-logo,
+  nav .cart-logo {
+    float: right;
+    margin-left: 10px;
+  }
+  
+  nav .user-logo img{
+    width: 30px;
+    height: 29px;
+  }
+  nav .cart-logo img {
+    width: 25px;
+    height: 25px;
+  }
+
+  
+  section {
+    margin: 20px;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  footer {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .product {
+    display: inline-block;
+    margin: 20px;
+    text-align: center;
+  }
+  
+  .product img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .product h4 {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+  
+  .product p {
+    font-size: 16px;
+  }
+
+ /*-----------------BIENVENIDA----------------------*/
+  #bienvenida {
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  #bienvenida.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  #bienvenida h2,
+  #bienvenida h3 {
+    display: inline; 
+    margin: 0;
+  }
+  
+  #bienvenida h2 {
+    font-size: 50px;
+    margin-bottom: -10px;
+    color: #ffffff;
+    position: relative;
+  }
+  
+  #bienvenida h2:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    bottom: -5px;
+    left: 0;
+    opacity: 0;
+    transform: scaleX(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  #bienvenida h2:hover:before {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  
+  
+  #bienvenida h3 {
+    font-size: 50px;
+    margin-bottom: -20px;
+    color: #ff0000;
+    position: relative;
+  }
+  
+  #bienvenida h3:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ff0000;
+    bottom: -5px;
+    left: 0;
+    opacity: 0;
+    transform: scaleX(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  #bienvenida h3:hover:before {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  
+  
+  #bienvenida p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 5px 0;
+    color: #fff;
+  }
+
+  
+
+  
+  /*-----------------IMAGENES INICIO----------------------*/
+  
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 28%; 
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .carousel-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .carousel-image.active {
+    opacity: 1;
+  }
+  /*-----------------------------------------------------*/
+
+  #inicio h3 { /*Productos destacados*/
+    font-size: 100px; 
+    margin-bottom: 10px;
+    color: #fff;
+  }
+
+
+  /*-----------------VIDEO DE FONDO----------------------*/
+#inicio .video-heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#inicio .video-container {
+  position: relative;
+  overflow: hidden;
+}
+
+#inicio video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6; 
+}
+  /*-----------------------------------------------------*/
+
+
+
+  /*-----------------PRODUCTOS DESTACADOS----------------------*/
+
+#inicio ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+#inicio li {
+  margin: 10px;
+  text-align: center;
+  max-width: 200px;
+}
+
+#inicio li img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+#inicio li h4 {
+  margin: 0;
+}
+
+/*-----------------------------------------------------*/
+
+
+
+/*-----------------SUPERATE----------------------*/
+
+
+#superate {
+  background-image: url('images/mamado.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 50px 0;
+}
+
+.superate-container {
+  background-color: rgba(0, 0, 0, 0.7); 
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+
+}
+
+.superate-container h3 {
+  color: #ff0000;
+  font-size: 50px;
+  margin-bottom: -15px;
+  font-family: anime;
+}
+.superate-container h2 {
+  color: #fff;
+  font-size: 30px;
+  
+}
+
+.btn {
+  display: inline-block;
+  background-color: #ff0000;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #990000;
+}
+
+/*-----------------------------------------------------*/
+
+
+
+/*--------------PRODUCTOS MAS VENDIDOS-----------------*/
+
+#productos {
+  text-align: center;
+  padding: 20px;
+}
+
+#productos h3 {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.product-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.product {
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.product h4 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.product .brand {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.product .price {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.arrow-container {
+  text-align: center;
+}
+
+.arrow {
+  font-size: 24px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+/* Estilos para el botón */
+.btn {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #cc0000;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+/*-----------------------------------------------------*/
+
+
+
+/*-----------------SNACKS------------------*/
+#snacks {
+  text-align: center;
+  color: #fff;
+}
+
+.snacks-header {
+  margin-bottom: 5px;
+}
+
+.snacks-header h2 {
+  color: #000000;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.snacks-container {
+  position: relative;
+  width: 100%; 
+  height: 275px; 
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.snacks-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.snacks-image.active {
+  opacity: 1;
+
+}
+
+
+/*-----------------------------------------------------*/
+
+/*------------------NUEVOS PRODUCTOS-----------------------*/
+
+
+#nuevos-productos {
+  text-align: center;
+  padding: 20px;
+}
+
+#nuevos-productos h3 {
+  font-size: 25px;
+  margin-bottom: 20px;
+  
+}
+
+.nuevos-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.nuevos {
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.nuevos img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.nuevos h4 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.nuevos .marca {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.nuevos .precio {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.arroww-container {
+  text-align: center;
+}
+
+.arroww {
+  font-size: 24px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+/* Estilos para el botón */
+.btn {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #cc0000;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.nuevos.oculto {
+  display: none;
+}
+/*-----------------------------------------------------*/
+
+/*-----------------MARCAS DESTACADAS----------------*/
+#marcas-destacadas {
+  background-color: white;
+  padding: 2px;
+  font-size: 25px;
+}
+
+.marcas-container {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  overflow: hidden;
+}
+
+.marcas-carousel {
+  display: flex;
+  align-items: center;
+  animation: carouselAnimation 20s linear infinite;
+}
+
+.marcas-carousel img {
+  max-height: 200px; 
+  margin-right: 100px; 
+}
+
+@keyframes carouselAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+/*-----------------------------------------------------*/
+
+
+
+/*---------------------BANNER------------------------*/
+.banner {
+  width: 99%;
+  max-width: 98%;
+  overflow: hidden;
+
+  margin-right: -10%;
+  margin-left: 2%;
+
+}
+
+.banner img {
+  display: block;
+  width: 98%;
+  height: auto;
+  margin-top: -25px;
+}
+
+
+/*-----------------------------------------------------*/
+
+
+/*------------------------CONTACTO------------------------*/
+.footer {
+  background-color: #000000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-section h2 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #ff3300;
+  font-family: anime;
+}
+
+.logo-section p {
+  font-size: 14px;
+  color: #fff;
+  line-height: 0.5; 
+}
+
+.social-media-section {
+  text-align: center;
+  color: #fff;
+}
+
+.social-media-section h3 {
+  font-size: px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.social-media-icons img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.contact-section h3 {
+  font-size: 25px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  color: #fff;
+}
+
+.contact-item {
+  display: flex;
+  align-items: normal;
+  margin-right: 20px;
+  margin-right: 25px;
+  margin-left: 325px;
+  color: #fff;
+
+
+}
+
+.contact-item img {
+  width: 50px;
+  height: 50px;
+  margin-right: 5px;
+
+}
+
+.bottom-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+
+/*---------------------ULTIMA PARTE-------------------------*/
+
+footer {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 0.5px;
+  text-align: center;
+}
+/*-----------------------------------------------------*/
+
+
+@font-face {
+  font-family: roboto;
+  src: url('fuentes/Roboto-Black.ttf') format('truetype');
+}
+@font-face {
+  font-family: anime;
+  src: url('fuentes/AniMeMatrix-MB_EN.ttf') format('truetype');
+}
+
